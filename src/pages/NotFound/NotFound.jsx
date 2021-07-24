@@ -1,23 +1,29 @@
+import backgroundImage from '../../assets/svg/1.svg'
+
 const NotFound = () => {
   return (
-    <div className="relative h-screen overflow-hidden bg-indigo-900">
-      <img
-        src="/images/landscape/8.svg"
-        className="absolute object-cover w-full h-full"
-        alt="background"
-      />
-      <div className="absolute inset-0 bg-black opacity-25" />
-      <div className="container relative z-10 flex items-center px-6 py-32 mx-auto md:px-12 xl:py-40">
-        <div className="relative z-10 flex flex-col items-center w-full font-mono">
-          <h1 className="mt-4 text-5xl font-extrabold leading-tight text-center text-white">
-            You&#x27;re alone here
-          </h1>
-          <p className="font-extrabold text-white text-8xl my-44 animate-bounce">
-            404
-          </p>
+    <main className="relative h-screen overflow-hidden bg-white">
+      <div className="container z-10 flex items-center justify-between h-screen px-6 pt-32 mx-auto md:pt-0">
+        <div className="container relative flex flex-col-reverse items-center justify-between px-6 mx-auto lg:flex-row">
+          <div className="w-full mb-16 text-center md:mb-8 lg:text-left">
+            <h1 className="mt-12 font-sans text-5xl font-light text-center text-gray-700 lg:text-left lg:text-8xl md:mt-0">
+              Sorry, this page isn&#x27;t available
+              <br />
+              404
+            </h1>
+            <button
+              className="px-2 py-2 mt-16 text-lg font-light transition duration-200 ease-in bg-yellow-300 border-2 border-gray-700 w-36 hover:bg-yellow-400 focus:outline-none"
+              type="button"
+            >
+              Go back home
+            </button>
+          </div>
+          <div className="relative block w-full max-w-md mx-auto md:mt-0 lg:max-w-2xl">
+            <img src={backgroundImage} alt="backround" />
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
