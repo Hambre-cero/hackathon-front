@@ -2,7 +2,7 @@ import backgroundImage from '../../assets/svg/1.svg'
 
 const NotFound = () => {
   return (
-    <main className="relative h-screen overflow-hidden bg-white">
+    <div className="relative h-screen overflow-hidden bg-white">
       <div className="container z-10 flex items-center justify-between h-screen px-6 pt-32 mx-auto md:pt-0">
         <div className="container relative flex flex-col-reverse items-center justify-between px-6 mx-auto lg:flex-row">
           <div className="w-full mb-16 text-center md:mb-8 lg:text-left">
@@ -23,7 +23,7 @@ const NotFound = () => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
 
