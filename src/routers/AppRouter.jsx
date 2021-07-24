@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,8 +11,9 @@ const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Landing} />
-        <Redirect to="/404" component={NotFound} />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/404" component={NotFound} />
+        <Redirect to="/404" />
       </Switch>
     </Router>
   )
