@@ -1,22 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-
+import { Link } from 'react-router-dom'
 import './styles.css'
-
-/*
-    |￣￣￣￣￣  
-    | // TODO: Improve html tags, and fix the button for mobiles
-    |＿＿＿_ 
-(\__/)|| 
-(•ㅅ•)|| 
-/  づ
-*/
-
-{
-  /*  */
-}
 
 const Landing = () => {
   const [menu, setMenu] = useState(false)
@@ -34,7 +20,7 @@ const Landing = () => {
     <div className="landing__background">
       <header className="header">
         <nav className="navbar">
-          <Link to="/" className="brand-logo text-white">
+          <Link to="/" className="text-white brand-logo">
             <svg
               className="w-8 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +32,7 @@ const Landing = () => {
               <path d="M16.16 5.82H0L8.08 0l8.08 5.82z" />
             </svg>
           </Link>
-          <div className="navbar__nav hidden md:grid" id="nav">
+          <div className="hidden navbar__nav md:grid" id="nav">
             <Link to="/" className="navbar__nav-item">
               {t('landing.link1')}
             </Link>
@@ -61,6 +47,7 @@ const Landing = () => {
                 setMenu(false)
               }}
               className="navbar__nav-item md:hidden"
+              type="button"
             >
               X
             </button>
@@ -69,7 +56,7 @@ const Landing = () => {
             onClick={() => {
               setMenu(true)
             }}
-            className="md:hidden text-white focus:outline-none"
+            className="text-white md:hidden focus:outline-none"
             type="button"
           >
             <svg
@@ -89,7 +76,7 @@ const Landing = () => {
           </button>
         </nav>
       </header>
-      <div className="absolute flex flex-col top-1/2 transform -translate-y-1/2 px-6 mx-auto md:px-12">
+      <div className="absolute flex flex-col px-6 mx-auto transform -translate-y-1/2 top-1/2 md:px-12">
         <span className="font-bold text-yellow-400 uppercase">Easy Donate</span>
         <h1 className="max-w-screen-md mt-4 text-3xl font-bold leading-tight text-white sm:text-6xl">
           {t('landing.phrase1')}
@@ -100,7 +87,7 @@ const Landing = () => {
         </h1>
         <Link
           to="/"
-          className="w-28  px-4 py-3 mt-10 text-lg font-bold text-gray-800 uppercase bg-white rounded-lg hover:bg-gray-100"
+          className="px-4 py-3 mt-10 text-lg font-bold text-gray-800 uppercase bg-white rounded-lg w-28 hover:bg-gray-100"
         >
           {t('landing.button')}
         </Link>
