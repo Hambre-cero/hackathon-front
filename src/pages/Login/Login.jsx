@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../../components/Landing/Navbar/Navbar'
-
+import useForm from '../../hooks/useForm'
+import { AutContext } from '../../providers/AuthProvivider'
 import './Login.css'
 
 const Login = () => {
+  const { login } = useContext(AutContext)
+
+  const initialState = {
+    username: 'barcochrist@gmail.com',
+    password: 'Barcochrist4'
+  }
+
+  const { handleInputChange, values } = useForm(initialState)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    login(values.username, values.password)
+  }
+
   return (
-    <React.StrictMode>
+    <>
       <Navbar />
       <div className="flex items-center justify-center w-screen h-screen">
         <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
@@ -13,7 +28,7 @@ const Login = () => {
             Login To Your Account
           </div>
           <div className="mt-8">
-            <form action="#" autoComplete="off">
+            <form action="#" autoComplete="off" onSubmit={handleSubmit}>
               <div className="flex flex-col mb-2">
                 <div className="relative flex ">
                   <span className="inline-flex items-center px-3 text-sm text-gray-500 bg-white border-t border-b border-l border-gray-300 shadow-sm rounded-l-md">
@@ -28,10 +43,12 @@ const Login = () => {
                     </svg>
                   </span>
                   <input
+                    name="username"
                     type="text"
-                    id="sign-in-email"
                     className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-r-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Your email"
+                    onChange={handleInputChange}
+                    value={values.username}
                   />
                 </div>
               </div>
@@ -49,10 +66,12 @@ const Login = () => {
                     </svg>
                   </span>
                   <input
+                    name="password"
                     type="password"
-                    id="sign-in-email"
                     className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-r-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Your password"
+                    onChange={handleInputChange}
+                    value={values.password}
                   />
                 </div>
               </div>
@@ -88,7 +107,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </React.StrictMode>
+    </>
   )
 }
 
