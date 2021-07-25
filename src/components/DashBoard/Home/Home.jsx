@@ -15,6 +15,8 @@ const Home = () => {
 
   useEffect(() => {
     fetchData()
+
+    return () => setState({})
   }, [])
 
   if (state.loading) {

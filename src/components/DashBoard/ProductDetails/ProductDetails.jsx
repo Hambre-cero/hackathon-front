@@ -18,6 +18,9 @@ const ProductDetails = () => {
 
   useEffect(() => {
     getData(id).then((data) => setitem({ ...data, loading: false }))
+    return () => {
+      getData({})
+    }
   }, [id])
 
   return (
