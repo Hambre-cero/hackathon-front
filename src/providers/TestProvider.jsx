@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { I18nextProvider } from 'react-i18next'
 import globalEn from '../translations/en/global.json'
 import globalEs from '../translations/es/global.json'
+import AuthProvivider from './AuthProvivider'
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -18,7 +19,11 @@ i18next.init({
 })
 
 const TestProvider = ({ children }) => {
-  return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
+  return (
+    <I18nextProvider i18n={i18next}>
+      <AuthProvivider>{children}</AuthProvivider>
+    </I18nextProvider>
+  )
 }
 
 TestProvider.propTypes = {
