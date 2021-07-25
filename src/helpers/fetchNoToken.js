@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import toast from 'react-hot-toast'
 
 const baseUrl = process.env.REACT_APP_URL_BASE
@@ -13,23 +14,18 @@ const fetchNoToken = async (endpoint, data, method = 'GET') => {
     }
   } else {
     try {
-      const formData = new FormData()
-      formData.append('username', data.username)
-      formData.append('password', data.password)
-
       const response = await fetch(urlFetch, {
         method,
         headers: {
           'Content-type': 'application/json'
         },
-        body: formData
+        body: JSON.stringify(data)
       })
-      return await response.json()
+      return response
     } catch (error) {
       toast.error("This didn't work.")
     }
   }
-  return null
 }
 
 export default fetchNoToken

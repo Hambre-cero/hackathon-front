@@ -10,9 +10,7 @@ export const AutContext = createContext({})
 const initialState = {
   uid: null,
   cheking: true,
-  logged: false,
-  name: null,
-  email: null
+  logged: false
 }
 
 const AuthProvivider = ({ children }) => {
@@ -21,26 +19,17 @@ const AuthProvivider = ({ children }) => {
   const login = async (username, password) => {
     try {
       const response = await fetchNoToken(
-        'login',
+        'api/external/login',
         { username, password },
         'POST'
       )
 
-      if (response.token) {
-        localStorage.setItem('tokenEdonate', response.token)
-
-        const {
-          userDb: { uid, userName, email }
-        } = response
-
+      if (response.status === 200) {
+        localStorage.setItem('tokenEdonate', response.body.token)
         setAuth({
-          uid,
           cheking: false,
-          logged: true,
-          name: userName,
-          email
+          logged: true
         })
-        return true
       }
     } catch (error) {
       toast.error('User or password wrong!')
