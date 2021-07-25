@@ -39,7 +39,7 @@ const Landing = () => {
             <Link to="/" className="navbar__nav-item">
               {t('landing.link2')}
             </Link>
-            <Link to="/" className="navbar__nav-item">
+            <Link to="/login" className="navbar__nav-item">
               {t('landing.link3')}
             </Link>
             <button
