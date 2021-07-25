@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { AutContext } from '../../../providers/AuthProvivider'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
+  const { logOut } = useContext(AutContext)
 
   return (
     <header className="z-40 items-center w-full h-16 bg-white shadow-lg dark:bg-gray-700 rounded-2xl">
@@ -57,6 +59,7 @@ const Header = () => {
                     <button
                       type="button"
                       className="w-full delay-75 py-2 px-4 hover:text-gray-800 hover:bg-gray-100"
+                      onClick={() => logOut()}
                     >
                       Log Out
                     </button>
