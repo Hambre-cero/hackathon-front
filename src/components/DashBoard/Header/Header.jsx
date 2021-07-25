@@ -1,4 +1,10 @@
+import { useState, useContext } from 'react'
+import { AutContext } from '../../../providers/AuthProvivider'
+
 const Header = () => {
+  const [menu, setMenu] = useState(false)
+  const { logOut } = useContext(AutContext)
+
   return (
     <header className="z-40 items-center w-full h-16 bg-white shadow-lg dark:bg-gray-700 rounded-2xl">
       <div className="relative z-20 flex flex-col justify-center h-full px-3 mx-auto flex-center">
@@ -29,6 +35,7 @@ const Header = () => {
                 type="text"
                 className="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input"
                 placeholder="Search"
+                onChange={() => console.log('cambia')}
               />
               <div className="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
                 +
@@ -36,13 +43,32 @@ const Header = () => {
             </div>
           </div>
           <div className="relative flex items-center justify-end w-1/4 p-1 ml-5 mr-4 sm:mr-0 sm:right-auto">
-            <a href="http://f.com" className="relative block">
+            <button
+              type="button"
+              onClick={() => setMenu(!menu)}
+              className="relative block relative"
+            >
               <img
-                alt="profil"
+                alt="profile"
                 src="/images/person/1.jpg"
-                className="object-cover w-10 h-10 mx-auto rounded-full "
+                className="object-cover w-10 h-10 mx-auto rounded-full bg-yellow-600 overflow-hidden"
               />
-            </a>
+              {menu ? (
+                <ul className="w-28 absolute -bottom-10 right-0 bg-white shadow-md">
+                  <li>
+                    <button
+                      type="button"
+                      className="w-full delay-75 py-2 px-4 hover:text-gray-800 hover:bg-gray-100"
+                      onClick={() => logOut()}
+                    >
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              ) : (
+                ''
+              )}
+            </button>
           </div>
         </div>
       </div>
