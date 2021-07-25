@@ -2,17 +2,16 @@
 import { useContext, useEffect } from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
+  Redirect,
   Route,
-  Redirect
+  Switch
 } from 'react-router-dom'
 import Loader from '../components/Loader/Loader'
-import Landing from '../pages/Landing/Landing'
-import Login from '../pages/Login/Login'
-import NotFound from '../pages/NotFound/NotFound'
-import Register from '../pages/Register/Register'
 import { AutContext } from '../providers/AuthProvivider'
 import DashBoardRouter from './DashBoardRouter'
+import PrivateRoutes from './PrivateRoutes'
+import PublicRouter from './PublicRouter'
+import PublicRoutes from './PublicRoutes'
 
 const AppRouter = () => {
   const { auth, tokenValidator } = useContext(AutContext)
@@ -27,11 +26,16 @@ const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/404" component={NotFound} />
-        <Route exact path="/" component={Landing} />
-        <Route path="/dashboard" component={DashBoardRouter} />
+        <PrivateRoutes
+          isAuthenticated={auth.logged}
+          path="/dashboard"
+          component={DashBoardRouter}
+        />
+        <PublicRoutes
+          isAuthenticated={auth.logged}
+          path="/"
+          component={PublicRouter}
+        />
         <Redirect to="/404" />
       </Switch>
     </Router>

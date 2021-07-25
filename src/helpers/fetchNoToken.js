@@ -21,9 +21,9 @@ const fetchNoToken = async (endpoint, data, method = 'GET') => {
         },
         body: JSON.stringify(data)
       })
-      return response
+      return await response.text()
     } catch (error) {
-      toast.error("This didn't work.")
+      toast.error("This didn't work...")
     }
   }
 }

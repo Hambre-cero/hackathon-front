@@ -7,7 +7,11 @@ const PublicRoutes = ({ isAuthenticated, component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        !isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
+        !isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/dashboard" />
+        )
       }
     />
   )
@@ -15,7 +19,7 @@ const PublicRoutes = ({ isAuthenticated, component: Component, ...rest }) => {
 
 PublicRoutes.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  component: PropTypes.node.isRequired
+  component: PropTypes.func.isRequired
 }
 
 export default PublicRoutes

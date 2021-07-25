@@ -24,8 +24,8 @@ const AuthProvivider = ({ children }) => {
         'POST'
       )
 
-      if (response.status === 200) {
-        localStorage.setItem('tokenEdonate', response.body.token)
+      if (response !== '' || null) {
+        localStorage.setItem('tokenEdonate', `Bearer ${response}`)
         setAuth({
           cheking: false,
           logged: true
@@ -34,7 +34,6 @@ const AuthProvivider = ({ children }) => {
     } catch (error) {
       toast.error('User or password wrong!')
     }
-    return null
   }
 
   const logOut = () => {
@@ -53,8 +52,8 @@ const AuthProvivider = ({ children }) => {
         'POST'
       )
 
-      if (response.token) {
-        localStorage.setItem('tokenEdonate', response.token)
+      if (response.id !== '' || null) {
+        localStorage.setItem('tokenEdonate', response.body)
 
         const {
           user: { uid, userName, email }
@@ -86,20 +85,20 @@ const AuthProvivider = ({ children }) => {
       return false
     }
 
-    const response = await fetchToken('api/users/me?lang=es')
+    const response = await fetchToken('api/users/me')
 
-    if (response.status === 200) {
-      localStorage.setItem('tokenEdonate', response.headers.Authorization)
+    if (response.id !== '' || null) {
+      // localStorage.setItem('tokenEdonate', response.headers.Authorization)
 
       const {
-        user: { uid, userName, email }
+        response: { id, name, email }
       } = response
 
       setAuth({
-        uid,
+        id,
         cheking: false,
         logged: true,
-        name: userName,
+        name,
         email
       })
     } else {
