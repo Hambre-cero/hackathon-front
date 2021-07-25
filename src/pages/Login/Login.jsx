@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../../components/Landing/Navbar/Navbar'
 import useForm from '../../hooks/useForm'
 import { AutContext } from '../../providers/AuthProvivider'
@@ -95,14 +96,12 @@ const Login = () => {
             </form>
           </div>
           <div className="flex items-center justify-center mt-6">
-            <a
-              href="http://f.com"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/register"
               className="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white"
             >
               <span className="ml-2">You don&#x27;t have an account?</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
