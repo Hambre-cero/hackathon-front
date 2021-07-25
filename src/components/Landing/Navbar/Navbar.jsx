@@ -21,6 +21,7 @@ function Navbar() {
       <nav className="container px-6 py-2 mx-auto md:px-12 items-center justify-between flex">
         <Link to="/" className="text-white brand-logo">
           <svg
+            color="black"
             className="w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Capa 1"
@@ -71,6 +72,7 @@ function Navbar() {
           type="button"
         >
           <svg
+            color="black"
             className="w-12 h-12"
             viewBox="0 0 24 24"
             fill="none"
