@@ -1,18 +1,22 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-// import LocationIcon from '../../../assets/icons/location.svg'
 
 const CardItem = ({ image, title, price, category }) => {
   return (
-    <Link to="sadf" className="bg-white shadow-md">
-      <img className="object-cover h-32" src={image} alt="Imagen de fondo" />
-      <div className="px-5 py-4 border-b">
-        <p className="text-sm text-gray-700">{title}</p>
-        <p className="font-bold tracking-wide">${price}</p>
-        <p className="text-sm text-gray-700">{category}</p>
-      </div>
-      <div className="px-5 py-4 text-gray-600" />
-    </Link>
+    <li className="bg-white shadow-md">
+      <Link to="sadf" className="flex flex-col px-10 py-5 md:flex-row">
+        <img
+          className="object-cover h-32 pr-5"
+          src={image}
+          alt={`Product ${title}`}
+        />
+        <div className="flex flex-col justify-center px-5 py-4 border-l">
+          <p className="text-sm text-gray-700">{title}</p>
+          <p className="font-bold tracking-wide">${price}</p>
+          <p className="text-sm text-gray-700">{category}</p>
+        </div>
+      </Link>
+    </li>
   )
 }
 
