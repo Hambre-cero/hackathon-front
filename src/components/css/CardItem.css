@@ -1,0 +1,46 @@
+.icon {
+  width: 15px;
+}
+
+.btn--link {
+  font-style: none;
+  display: flex;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.btn--link:hover {
+  color: rgb(47, 47, 47);
+}
+
+.CardItem {
+  min-width: 100px;
+  box-shadow: 0 5px 5px rgb(185, 185, 185);
+  background: white;
+}
+
+.CardItem__photo {
+  height: 130px;
+  object-fit: scale-down;
+}
+
+.CardItem__description {
+  padding: 25px 20px;
+  border-bottom: solid 1px rgb(230, 230, 230);
+}
+
+.CardItem__description-info--1 {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.CardItem__description-info--2 {
+  font-size: 14px;
+  color: rgb(47, 47, 47);
+}
+
+.CardItem__location {
+  padding: 15px 20px;
+  color: rgb(109, 109, 109);
+  font-size: 14px;
+}
