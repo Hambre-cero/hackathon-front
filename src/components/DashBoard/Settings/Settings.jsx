@@ -1,7 +1,7 @@
 const Settings = () => {
   return (
-    <section className="h-screen bg-gray-100 bg-opacity-50">
-      <form className="container max-w-2xl mx-auto shadow-md md:w-3/4">
+    <section className="flex justify-center w-full h-screen bg-gray-100 bg-opacity-50">
+      <form className="container max-w-2xl shadow-md md:w-3/4">
         <div className="p-4 bg-gray-100 border-t-2 border-indigo-400 rounded-lg bg-opacity-5">
           <div className="max-w-sm mx-auto md:w-full md:mx-0">
             <div className="inline-flex items-center space-x-4">
@@ -24,7 +24,7 @@ const Settings = () => {
                 <input
                   type="text"
                   id="user-info-email"
-                  className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Email"
                 />
               </div>
@@ -39,7 +39,7 @@ const Settings = () => {
                   <input
                     type="text"
                     id="user-info-name"
-                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Name"
                   />
                 </div>
@@ -49,7 +49,7 @@ const Settings = () => {
                   <input
                     type="text"
                     id="user-info-phone"
-                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     placeholder="Phone number"
                   />
                 </div>
@@ -64,7 +64,7 @@ const Settings = () => {
                 <input
                   type="text"
                   id="user-info-password"
-                  className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none  focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                  className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-transparent border-gray-300 rounded-lg shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="Password"
                 />
               </div>
