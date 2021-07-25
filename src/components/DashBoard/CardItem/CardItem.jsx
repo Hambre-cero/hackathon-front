@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import LocationIcon from '../../../assets/icons/location.svg'
 import '../../css/CardItem.css'
 
-const CardItem = ({ image, title, price, category }) => {
+const CardItem = ({ id, image, title, price, category }) => {
   return (
-    <div key="1" className="CardItem">
+    <Link to={`/dashboard/${id}/product`} key={id} className="CardItem">
       <img className="CardItem__photo" src={image} alt="Imagen de fondo" />
       <div className="CardItem__description">
         <p className="CardItem__description-info--2">{title}</p>
@@ -18,12 +18,13 @@ const CardItem = ({ image, title, price, category }) => {
           <img className="icon" src={LocationIcon} alt="location icon" />
         </Link>
       </div>
-    </div>
+    </Link>
   )
 }
 
 export default CardItem
 CardItem.propTypes = {
+  id: PropTypes.node.isRequired,
   image: PropTypes.node.isRequired,
   title: PropTypes.node.isRequired,
   price: PropTypes.node.isRequired,

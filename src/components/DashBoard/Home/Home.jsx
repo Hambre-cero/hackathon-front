@@ -25,6 +25,7 @@ const Home = () => {
       {state.data.map((item) => {
         return (
           <CardItem
+            id={item.id}
             image={item.image}
             title={item.title}
             price={item.price}
