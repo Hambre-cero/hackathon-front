@@ -1,39 +1,25 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import LocationIcon from '../../../assets/icons/location.svg'
-// import '../../css/CardItem.css'
+// import LocationIcon from '../../../assets/icons/location.svg'
 
-const CardItem = ({ id, image, title, price, category }) => {
+const CardItem = ({ image, title, price, category }) => {
   return (
-    <Link
-      to={`/dashboard/${id}/product`}
-      key={id}
-      className="bg-white shadow-md"
-    >
-      <img className="h-32 object-cover" src={image} alt="Imagen de fondo" />
+    <Link to="sadf" className="bg-white shadow-md">
+      <img className="object-cover h-32" src={image} alt="Imagen de fondo" />
       <div className="px-5 py-4 border-b">
         <p className="text-sm text-gray-700">{title}</p>
         <p className="font-bold tracking-wide">${price}</p>
         <p className="text-sm text-gray-700">{category}</p>
       </div>
-      <div className="px-5 py-4 text-gray-600">
-        <Link
-          className="flex not-italic justify-end delay-75 hover:text-gray-800"
-          to="/"
-        >
-          Find Me
-          <img className="icon" src={LocationIcon} alt="location icon" />
-        </Link>
-      </div>
+      <div className="px-5 py-4 text-gray-600" />
     </Link>
   )
 }
 
 export default CardItem
 CardItem.propTypes = {
-  id: PropTypes.node.isRequired,
-  image: PropTypes.node.isRequired,
-  title: PropTypes.node.isRequired,
-  price: PropTypes.node.isRequired,
-  category: PropTypes.node.isRequired
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired
 }
