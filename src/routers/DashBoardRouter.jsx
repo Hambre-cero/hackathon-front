@@ -1,5 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Home from '../components/DashBoard/Home/Home'
+import ProductDetails from '../components/DashBoard/ProductDetails'
 import Settings from '../components/DashBoard/Settings/Settings'
 import DashBoard from '../pages/DashBoard/DashBoard'
 
@@ -9,6 +10,7 @@ const DashBoardRouter = () => {
       <Switch>
         <Route exact path="/dashboard/home" component={Home} />
         <Route exact path="/dashboard/settings" component={Settings} />
+        <Route exact path="/dashboard/product/:id" component={ProductDetails} />
         <Redirect to="/dashboard/home" />
       </Switch>
     </DashBoard>
