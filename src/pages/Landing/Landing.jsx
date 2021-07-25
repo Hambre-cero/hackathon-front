@@ -21,7 +21,7 @@ const Landing = () => {
           {t('landing.phrase3')}
         </h1>
         <Link
-          to="/"
+          to="/login"
           className="px-4 py-3 mt-10 text-lg font-bold text-gray-800 uppercase bg-white rounded-lg w-28 hover:bg-gray-100"
         >
           {t('landing.button')}
