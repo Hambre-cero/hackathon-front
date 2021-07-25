@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const CardItem = ({ image, title, price, category }) => {
+const CardItem = ({ id, image, title, price, category }) => {
   return (
     <li className="bg-white shadow-md">
-      <Link to="sadf" className="flex flex-col px-10 py-5 md:flex-row">
+      <Link
+        to={`/dashboard/product/${id}`}
+        className="flex flex-col px-10 py-5 md:flex-row"
+      >
         <img
           className="object-cover h-32 pr-5"
           src={image}
@@ -22,6 +25,7 @@ const CardItem = ({ image, title, price, category }) => {
 
 export default CardItem
 CardItem.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
