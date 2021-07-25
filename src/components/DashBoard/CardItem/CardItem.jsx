@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const CardItem = ({ id, image, title, price, category }) => {
+const CardItem = ({ id, image, title, category }) => {
   return (
     <li className="bg-white shadow-md">
       <Link
@@ -15,7 +15,6 @@ const CardItem = ({ id, image, title, price, category }) => {
         />
         <div className="flex flex-col justify-center px-5 py-4 border-l">
           <p className="text-sm text-gray-700">{title}</p>
-          <p className="font-bold tracking-wide">${price}</p>
           <p className="text-sm text-gray-700">{category}</p>
         </div>
       </Link>
@@ -28,6 +27,5 @@ CardItem.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired
 }
