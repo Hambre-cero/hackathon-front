@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Loader from '../../Loader/Loader'
 import CardItem from '../CardItem/CardItem'
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
   }, [])
 
   if (state.loading) {
-    return 'Cargando...'
+    return <Loader />
   }
 
   return (
