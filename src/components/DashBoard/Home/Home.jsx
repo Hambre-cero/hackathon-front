@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import CardItem from '../CardItem/CardItem'
-import '../../css/Home.css'
 
 const Home = () => {
   const [state, setState] = useState({ loading: true, data: [] })
 
   const fetchData = async () => {
-    const dat = await fetch('https://fakestoreapi.com/products')
-    const datjson = await dat.json()
+    const dat = await fetch('https://fakestoreapi.com/products').then((data) =>
+      data.json()
+    )
 
-    setState({ loading: false, data: datjson })
+    setState({ loading: false, data: dat })
   }
 
   useEffect(() => {
@@ -17,14 +17,15 @@ const Home = () => {
   }, [])
 
   if (state.loading) {
-    return 'Cargando'
+    return 'Cargando...'
   }
 
   return (
-    <ul className="gallery">
+    <ul className="grid gap-4">
       {state.data.map((item) => {
         return (
           <CardItem
+            id={item.id}
             image={item.image}
             title={item.title}
             price={item.price}

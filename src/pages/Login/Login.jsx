@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import Navbar from '../../components/Landing/Navbar/Navbar'
 import useForm from '../../hooks/useForm'
 import { AutContext } from '../../providers/AuthProvivider'
-import './Login.css'
 
 const Login = () => {
   const { login } = useContext(AutContext)
