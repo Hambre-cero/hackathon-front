@@ -8,8 +8,8 @@ const Login = () => {
   const { login } = useContext(AutContext)
 
   const initialState = {
-    username: 'barcochrist@gmail.com',
-    password: 'Barcochrist4'
+    username: '',
+    password: ''
   }
 
   const { handleInputChange, values } = useForm(initialState)

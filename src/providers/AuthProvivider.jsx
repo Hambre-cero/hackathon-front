@@ -88,8 +88,6 @@ const AuthProvivider = ({ children }) => {
     const response = await fetchToken('api/users/me')
 
     if (response.id !== '' || null) {
-      // localStorage.setItem('tokenEdonate', response.headers.Authorization)
-
       const {
         response: { id, name, email }
       } = response
