@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import '../../css/Navbar.css'
+// import '../../css/Navbar.css'
 
 function Navbar() {
   const [menu, setMenu] = useState(false)
@@ -17,8 +17,8 @@ function Navbar() {
   })
 
   return (
-    <header className="header">
-      <nav className="navbar">
+    <header className="absolute top-0 left-0 right-0 z-10">
+      <nav className="container px-6 py-2 mx-auto md:px-12 items-center justify-between flex">
         <Link to="/" className="text-white brand-logo">
           <svg
             className="w-8 fill-current"
@@ -31,14 +31,26 @@ function Navbar() {
             <path d="M16.16 5.82H0L8.08 0l8.08 5.82z" />
           </svg>
         </Link>
-        <div className="hidden navbar__nav md:grid" id="nav">
-          <Link to="/" className="navbar__nav-item">
+        <div
+          className="hidden flex bg-indigo-900 flex-col absolute top-0 right-0 h-screen text-right p-4 md:static md:grid-cols-3 md:gap-12 md:text-center md:h-auto md:text-center md:bg-transparent md:grid"
+          id="nav"
+        >
+          <Link
+            to="/"
+            className="text-lg uppercase cursor-pointer hover:text-gray-300 p-1 md:p-0"
+          >
             {t('landing.link1')}
           </Link>
-          <Link to="/" className="navbar__nav-item">
+          <Link
+            to="/"
+            className="text-lg uppercase cursor-pointer hover:text-gray-300 p-1 md:p-0"
+          >
             {t('landing.link2')}
           </Link>
-          <Link to="/login" className="navbar__nav-item">
+          <Link
+            to="/login"
+            className="text-lg uppercase cursor-pointer hover:text-gray-300 p-1 md:p-0"
+          >
             {t('landing.link3')}
           </Link>
           <button

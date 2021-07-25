@@ -1,8 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/Landing/Navbar/Navbar'
 
-import './Login.css'
-
 const Login = () => {
   return (
     <React.StrictMode>
