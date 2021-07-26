@@ -1,9 +1,22 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { AutContext } from '../../../providers/AuthProvivider'
+import fetchToken from '../../../helpers/fetchToken'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
+  const [name, setName] = useState('')
   const { logOut } = useContext(AutContext)
+
+  const fetchName = async () => {
+    const getName = await fetchToken(`api/users/me`).then(
+      (res) => res.response.name
+    )
+    setName(getName)
+  }
+
+  useEffect(() => {
+    fetchName()
+  }, [])
 
   return (
     <header className="z-40 items-center w-full h-16 bg-white shadow-lg dark:bg-gray-700 rounded-2xl">
@@ -35,7 +48,6 @@ const Header = () => {
                 type="text"
                 className="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input"
                 placeholder="Search"
-                onChange={() => console.log('cambia')}
               />
               <div className="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
                 +
@@ -49,8 +61,8 @@ const Header = () => {
               className="relative block relative"
             >
               <img
-                alt="profile"
-                src="/images/person/1.jpg"
+                alt="Avatar"
+                src={`https://ui-avatars.com/api/?name=${name}&background=0D8ABC&color=fff`}
                 className="object-cover w-10 h-10 mx-auto rounded-full bg-yellow-600 overflow-hidden"
               />
               {menu ? (

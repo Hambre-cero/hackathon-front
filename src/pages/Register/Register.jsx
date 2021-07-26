@@ -9,11 +9,11 @@ const Register = () => {
   const { register } = useContext(AutContext)
 
   const initialState = {
-    userName: 'example',
-    firstName: 'example',
-    lastName: 'example',
-    email: 'example@gmail.com',
-    password: '1234'
+    userName: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
   }
 
   const { handleInputChange, values } = useForm(initialState)
