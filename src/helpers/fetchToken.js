@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 const baseUrl = process.env.REACT_APP_URL_BASE
 
 /**
- * 
+ *
  * @param {string} endpoint Por ejemplo 'users/me' NO SE PONE / antes de el texto '/users/me' NO
  * @param {any} data Data que quiera enviar, preferiblemente un objeto
  * @param {string} method Por default es Get, pero puede enviar cualquier otro metodo.

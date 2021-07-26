@@ -35,7 +35,6 @@ const Header = () => {
                 type="text"
                 className="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input"
                 placeholder="Search"
-                onChange={() => console.log('cambia')}
               />
               <div className="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
                 +
@@ -46,27 +45,25 @@ const Header = () => {
             <button
               type="button"
               onClick={() => setMenu(!menu)}
-              className="relative block relative"
+              className="relative block"
             >
               <img
                 alt="profile"
                 src="/images/person/1.jpg"
-                className="object-cover w-10 h-10 mx-auto rounded-full bg-yellow-600 overflow-hidden"
+                className="object-cover w-10 h-10 mx-auto overflow-hidden bg-yellow-600 rounded-full"
               />
-              {menu ? (
-                <ul className="w-28 absolute -bottom-10 right-0 bg-white shadow-md">
+              {menu && (
+                <ul className="absolute bg-white shadow-md p right-5 w-28 -bottom-10">
                   <li>
-                    <button
-                      type="button"
-                      className="w-full delay-75 py-2 px-4 hover:text-gray-800 hover:bg-gray-100"
+                    <a
+                      href="#/"
+                      className="w-auto px-5 delay-75 hover:text-gray-800 hover:bg-gray-100"
                       onClick={() => logOut()}
                     >
                       Log Out
-                    </button>
+                    </a>
                   </li>
                 </ul>
-              ) : (
-                ''
               )}
             </button>
           </div>
