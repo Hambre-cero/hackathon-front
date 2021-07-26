@@ -24,6 +24,16 @@ const Aside = () => {
             <NavLink
               activeClassName="text-blue-500 uppercase transition-colors duration-200 border-r-4 border-blue-500 bg-gradient-to-r from-white to-blue-100 dark:from-gray-700"
               className="flex items-center justify-start w-full p-4 my-2 font-thin text-gray-500 uppercase transition-colors duration-200 dark:text-gray-200 hover:text-blue-500"
+              to="/dashboard/organizations"
+            >
+              <span className="text-left">
+                <i className="bx bxs-donate-blood" />
+              </span>
+              <span className="mx-4 text-sm font-normal">Organizations</span>
+            </NavLink>
+            <NavLink
+              activeClassName="text-blue-500 uppercase transition-colors duration-200 border-r-4 border-blue-500 bg-gradient-to-r from-white to-blue-100 dark:from-gray-700"
+              className="flex items-center justify-start w-full p-4 my-2 font-thin text-gray-500 uppercase transition-colors duration-200 dark:text-gray-200 hover:text-blue-500"
               to="/dashboard/home"
             >
               <span className="text-left">
