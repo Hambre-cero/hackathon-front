@@ -1,9 +1,22 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { AutContext } from '../../../providers/AuthProvivider'
+import fetchToken from '../../../helpers/fetchToken'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
+  const [name, setName] = useState('')
   const { logOut } = useContext(AutContext)
+
+  const fetchName = async () => {
+    const getName = await fetchToken(`api/users/me`).then(
+      (res) => res.response.name
+    )
+    setName(getName)
+  }
+
+  useEffect(() => {
+    fetchName()
+  }, [])
 
   return (
     <header className="z-40 items-center w-full h-16 bg-white shadow-lg dark:bg-gray-700 rounded-2xl">
@@ -48,8 +61,8 @@ const Header = () => {
               className="relative block"
             >
               <img
-                alt="profile"
-                src="/images/person/1.jpg"
+                alt="Avatar"
+                src={`https://ui-avatars.com/api/?name=${name}&background=0D8ABC&color=fff`}
                 className="object-cover w-10 h-10 mx-auto overflow-hidden bg-yellow-600 rounded-full"
               />
               {menu && (
